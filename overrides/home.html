@@ -1,0 +1,84 @@
+{% extends "main.html" %}
+
+{% block styles %}
+{{ super() }}
+  <style>
+    .background-color {
+      background: linear-gradient(
+        to bottom,
+        var(--md-primary-fg-color),
+        rgb(63, 148, 217) 99%,
+        var(--md-default-bg-color) 99%
+      );
+    }
+    .mdx-container {
+      padding-top: px2rem(20px);
+    }
+    .md-main__inner {
+      max-width: 60%;
+    }
+    @media only screen {
+      .md-main__inner {
+        max-width: 100%;
+      }
+    }
+  </style>
+  <style>
+    .md-header__title--active .md-header__topic {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .md-header__title--active .md-header__topic + .md-header__topic {
+      opacity: 0;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  <section style="
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 5% 0% 5% 0%;
+  ">
+    <div style="max-width: 28em">
+      <section class="mdx-container">
+        <div class="md-grid md-typeset">
+          <div class="mdx-gallery">
+            <div style="margin-bottom: 10%" class="mdx-hero__content">
+              <h1>Welcome to Missouri Mesh!</h1>
+              <p>{{ config.site_description }}</p>
+              <img src="./assets/images/logo.png">
+              <a href="/about/" title="About" class="md-button md-button--primary">
+                Learn more
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div>
+      <div>
+        <h1 style="margin-bottom: 10px">Join our Discord server</h1>
+        <p style="margin-bottom: 20px; max-width: 20em">
+          Want to participate? Have ideas? Need help? Join our server!
+        </p>
+      </div>
+      <iframe
+        src="https://discord.com/widget?id=1507937329040330792"
+        width="450"
+        height="600"
+        allowtransparency="true"
+        frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+        style="
+          margin-bottom: 1.5rem;
+          border-radius: 10px;
+          box-shadow: 0 7px 12px 5px rgb(0 0 0 / 0.2);
+        "
+      ></iframe>
+    </div>
+  </section>
+{% endblock %}

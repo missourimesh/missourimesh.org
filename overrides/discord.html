@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+
+{% block htmltitle %}
+  <title>Redirecting... - Missouri Mesh</title>
+{% endblock %}
+
+{% block extrahead %}
+  <meta http-equiv="refresh" content="0; URL=https://discord.com/invite/hNCTKRNx">
+  <link rel="canonical" href="https://discord.com/invite/hNCTKRNx">
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <style>
+    @media screen and (min-width: 76.25em) {
+      .md-sidebar--primary {
+        display: none;
+      }
+    }
+    .md-content {
+      text-align: center;
+    }
+    .md-header--shadow {
+      box-shadow: unset;
+    }
+    .md-sidebar.md-sidebar--secondary {
+      display: none;
+    }
+  </style>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    window.location.href = "https://discord.com/invite/hNCTKRNx";
+  </script>
+{% endblock %}
+
+{% block content %}
+  <p>If you are not redirected automatically, follow this <a href="https://discord.com/invite/hNCTKRNx">link</a>.</p>
+{% endblock %}

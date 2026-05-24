@@ -1,0 +1,99 @@
+site_name: Missouri Mesh
+site_description: >-
+  Join the local community of MeshCore, Meshtastic, and LoRa enthusiasts in the
+  state of Missouri.
+site_url: https://missourimesh.org
+
+copyright: >-
+  Copyright &copy; 2026 Missouri Mesh <u><a href="https://github.com/missourimesh/missourimesh.org">Contributors</a></u><br>
+  <p style="margin:0">Missouri Mesh is not affilated with <u><a href="https://meshtastic.org" target="_blank" rel="noreferrer noopener">Meshtastic®</a></u>, nor endorsed by <u><a href="https://meshtastic.org/docs/legal/licensing-and-trademark" target="_blank" rel="noreferrer noopener">Meshtastic LLC</a></u>.</p>
+
+nav:
+  - About: about.md
+  - Resources: resources/index.md
+  - Neighbors: neighbors.md
+  - Contact: contact.md
+
+plugins:
+  - tags
+  - search
+  - glightbox
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+theme:
+  name: "material"
+  custom_dir: "overrides"
+  logo: "assets/images/logo.png"
+  favicon: "assets/images/logo.png"
+  features:
+    - announce.dismiss
+    - content.code.copy
+    - content.tabs.link
+    - content.tooltips
+    - navigation.tabs
+    - navigation.path
+    - navigation.section
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.share
+  icon:
+    repo: "fontawesome/brands/github"
+  palette:
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: indigo
+    accent: indigo
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black
+    accent: indigo
+    toggle:
+      icon: material/brightness-4
+      name: Switch to system preference
+
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  generator: false
+  social:
+    - icon: custom/meshcore
+      link: https://meshcore.io
+      name: Check out the official MeshCore site!
+    - icon: custom/meshtastic
+      link: https://meshtastic.org
+      name: Check out the official Meshtastic site!
+    - icon: fontawesome/brands/github
+      link: https://github.com/missourimesh/missourimesh.org
+      name: Contribute to the github!
+    - icon: fontawesome/brands/discord
+      link: https://missourimesh.org/discord
+      name: Join the discord!
