@@ -1,0 +1,65 @@
+[data-md-color-primary=indigo] {
+    --md-primary-fg-color: #004B8D;
+    --md-accent-fg-color: #006dcc;
+}
+.md-main__inner.md-grid {
+    margin-top: 0.75rem;
+}
+.md-content__inner.md-typeset {
+    margin-bottom: 2.5em;
+}
+.glightbox img {
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+.headerlink {
+    display: inline !important;
+}
+.md-typeset figcaption {
+    margin-top: -0.5em;
+    margin-bottom: 0.25em;
+}
+.md-typeset h1 {
+    margin-bottom: 0.75em;
+}
+.md-typeset h2 {
+    margin-top: 1.2em;
+}
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0;
+}
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+    height: 1.6rem;
+    width: 1.6rem;
+}
+.md-header__title {
+    font-size: 1rem;
+}
+html {
+    overscroll-behavior-y: none;
+}
+.md-typeset .top {
+    vertical-align: top;
+}
+.grid.cards {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+.grid.cards.small {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+a[href="https://meshcore.io"].md-social__link {
+    width: 5em;
+    padding: 0 0.25em;
+    display: flex;
+    align-items: center;
+}
+a[href="https://reticulum.network"].md-social__link {
+    width: 3em;
+    padding: 0 0.25em;
+    display: flex;
+    align-items: center;
+}
+.md-social__link svg {
+    height: 100%;
+}
