@@ -6,7 +6,7 @@ tags:
   - Info
 ---
 
-# Check Out Our Neighbors
+# Check Out Our Awesome Neighbors
 
 <div class="grid cards small" markdown>
 
