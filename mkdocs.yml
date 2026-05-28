@@ -81,6 +81,10 @@ theme:
 
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/user-count.css
+
+extra_javascript:
+  - assets/javascripts/user-count.js
 
 extra:
   generator: false
