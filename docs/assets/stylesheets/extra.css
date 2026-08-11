@@ -63,3 +63,39 @@ a[href="https://reticulum.network"].md-social__link {
 .md-social__link svg {
     height: 100%;
 }
+
+/* Smooth fade between light/dark mode */
+body,
+[data-md-color-scheme] {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Catch the header, sidebar, cards, code blocks, etc. */
+.md-header,
+.md-tabs,
+.md-sidebar,
+.md-content,
+.md-footer,
+.md-typeset code,
+.md-typeset pre,
+.md-nav,
+.md-search__form {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* Respect users who've asked for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body,
+  [data-md-color-scheme],
+  .md-header,
+  .md-tabs,
+  .md-sidebar,
+  .md-content,
+  .md-footer,
+  .md-typeset code,
+  .md-typeset pre,
+  .md-nav,
+  .md-search__form {
+    transition: none;
+  }
+}
