@@ -1,6 +1,13 @@
+/* Brand palette — sampled directly from the logo (Missouri flag navy + red) */
 [data-md-color-primary=indigo] {
-    --md-primary-fg-color: #004B8D;
-    --md-accent-fg-color: #006dcc;
+    --md-primary-fg-color: #00205B;
+    --md-accent-fg-color: #BF0A30;
+}
+[data-md-color-accent=indigo] {
+    --md-accent-fg-color: #BF0A30;
+    --md-accent-fg-color--transparent: #bf0a301a;
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--light: #ffffffb3;
 }
 .md-main__inner.md-grid {
     margin-top: 0.75rem;
@@ -64,6 +71,152 @@ a[href="https://reticulum.network"].md-social__link {
     height: 100%;
 }
 
+/* ---------------------------------------------------------------- */
+/* Homepage hero                                                    */
+/* ---------------------------------------------------------------- */
+.mm-hero {
+    padding: 3.5rem 0 4.5rem;
+}
+.mm-hero__grid {
+    max-width: 74rem;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+}
+.mm-hero__logo {
+    width: 8rem;
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 7px 12px rgb(0 0 0 / 0.2));
+}
+.mm-hero__intro h1 {
+    margin: 0 0 0.6rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
+}
+.mm-hero__intro p {
+    font-size: 1.05rem;
+    max-width: 30rem;
+    color: var(--md-default-fg-color--light);
+    margin-bottom: 1.75rem;
+}
+.mm-hero__discord h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+}
+.mm-hero__discord p {
+    max-width: 26rem;
+    color: var(--md-default-fg-color--light);
+    margin-bottom: 1.25rem;
+}
+.mm-discord-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 7px 12px 5px rgb(0 0 0 / 0.2);
+    max-width: 450px;
+    line-height: 0;
+}
+.mm-discord-card iframe {
+    display: block;
+    width: 100%;
+    height: 500px;
+    border: 0;
+}
+@media screen and (max-width: 76.1875em) {
+    .mm-hero {
+        padding: 2.5rem 0 3rem;
+    }
+    .mm-hero__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        text-align: center;
+    }
+    .mm-hero__intro p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mm-hero__discord p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mm-discord-card {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* Card grids (Resources, Neighbors) — subtle hover lift             */
+/* ---------------------------------------------------------------- */
+.md-typeset .grid.cards > ul > li {
+    transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.md-typeset .grid.cards > ul > li:hover {
+    box-shadow: 0 6px 14px rgb(0 0 0 / 0.12);
+    transform: translateY(-2px);
+}
+.grid.cards.small img {
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+/* ---------------------------------------------------------------- */
+/* Numbered step lists (About -> Getting Started)                    */
+/* ---------------------------------------------------------------- */
+.mm-steps ol {
+    list-style: none;
+    counter-reset: mm-step;
+    padding-left: 0;
+    display: grid;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+.mm-steps li {
+    counter-increment: mm-step;
+    position: relative;
+    padding-left: 3.25rem;
+    min-height: 2.1rem;
+    padding-top: 0.35rem;
+}
+.mm-steps li::before {
+    content: counter(mm-step);
+    position: absolute;
+    left: 0;
+    top: 0.35rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 50%;
+    background: var(--md-accent-fg-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+/* ---------------------------------------------------------------- */
+/* Narrow content pages (Contact)                                    */
+/* ---------------------------------------------------------------- */
+.md-content__inner.md-typeset:has(.mm-narrow) {
+    text-align: center;
+}
+.mm-narrow {
+    margin-right: auto;
+    margin-left: auto;
+    width: 24em;
+    max-width: 100%;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.mm-narrow img {
+    filter: drop-shadow(0 7px 12px rgb(0 0 0 / 0.2));
+}
+
 /* Smooth fade between light/dark mode */
 body,
 [data-md-color-scheme] {
@@ -97,5 +250,358 @@ body,
   .md-nav,
   .md-search__form {
     transition: none;
+  }
+}
+
+
+/* =====================================================================
+   Missouri Mesh — modern dark landing-page redesign
+   Inspired by the visual language of modern developer/music tools,
+   but using original Missouri Mesh branding and content.
+   ===================================================================== */
+
+:root {
+  --mm-bg: #080b12;
+  --mm-bg-soft: #0d111a;
+  --mm-panel: rgba(18, 23, 34, .78);
+  --mm-panel-strong: #121825;
+  --mm-text: #f7f9fc;
+  --mm-muted: #a9b1c2;
+  --mm-blue: #4d8dff;
+  --mm-blue-2: #7ab0ff;
+  --mm-red: #e63946;
+  --mm-border: rgba(255,255,255,.09);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--mm-bg);
+  --md-default-fg-color: var(--mm-text);
+  --md-default-fg-color--light: var(--mm-muted);
+  --md-code-bg-color: #0c111a;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f5f7fb;
+}
+
+.md-header {
+  background: rgba(8, 11, 18, .82) !important;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--mm-border);
+}
+
+.md-header--shadow {
+  box-shadow: none !important;
+}
+
+.md-tabs {
+  background: rgba(8, 11, 18, .72) !important;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--mm-border);
+}
+
+.md-main {
+  background:
+    radial-gradient(circle at 15% 8%, rgba(77,141,255,.12), transparent 28rem),
+    radial-gradient(circle at 85% 18%, rgba(230,57,70,.08), transparent 26rem),
+    var(--mm-bg);
+}
+
+.md-main__inner.md-grid {
+  max-width: 100%;
+  margin-top: 0;
+}
+
+.md-content {
+  max-width: none;
+}
+
+.md-content__inner.md-typeset {
+  margin: 0;
+  padding: 0;
+}
+
+.md-sidebar {
+  background: transparent;
+}
+
+/* Homepage */
+.mm-home {
+  position: relative;
+  overflow: hidden;
+}
+
+.mm-home::before,
+.mm-home::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: .45;
+}
+
+.mm-home::before {
+  width: 22rem;
+  height: 22rem;
+  background: rgba(77,141,255,.16);
+  top: 3rem;
+  left: -8rem;
+}
+
+.mm-home::after {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(230,57,70,.11);
+  top: 26rem;
+  right: -8rem;
+}
+
+.mm-hero-new {
+  position: relative;
+  z-index: 1;
+  min-height: 76vh;
+  display: flex;
+  align-items: center;
+  padding: 7rem max(1.25rem, 5vw) 6rem;
+}
+
+.mm-hero-new__inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.mm-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .45rem .75rem;
+  border: 1px solid rgba(122,176,255,.25);
+  border-radius: 999px;
+  background: rgba(77,141,255,.07);
+  color: var(--mm-blue-2);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.mm-eyebrow::before {
+  content: "";
+  width: .42rem;
+  height: .42rem;
+  border-radius: 50%;
+  background: #63e68a;
+  box-shadow: 0 0 12px rgba(99,230,138,.8);
+}
+
+.mm-hero-new h1 {
+  max-width: 850px;
+  margin: 1.35rem 0 1.2rem;
+  font-size: clamp(3.2rem, 8vw, 6.8rem);
+  line-height: .96;
+  letter-spacing: -.055em;
+  font-weight: 850;
+  color: var(--mm-text);
+}
+
+.mm-gradient-text {
+  background: linear-gradient(100deg, #fff 20%, #a9c9ff 52%, #e9edf5 82%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mm-hero-new__lead {
+  max-width: 680px;
+  color: var(--mm-muted);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.7;
+}
+
+.mm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .8rem;
+  margin-top: 2rem;
+}
+
+.mm-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0 1.15rem;
+  border-radius: .7rem;
+  border: 1px solid var(--mm-border);
+  color: var(--mm-text) !important;
+  text-decoration: none !important;
+  font-weight: 750;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.mm-action:hover {
+  transform: translateY(-2px);
+  border-color: rgba(122,176,255,.45);
+  background: rgba(255,255,255,.05);
+}
+
+.mm-action--primary {
+  border-color: transparent;
+  background: var(--mm-blue);
+  box-shadow: 0 10px 35px rgba(77,141,255,.22);
+}
+
+.mm-action--primary:hover {
+  background: var(--mm-blue-2);
+}
+
+.mm-network-card {
+  margin-top: 5rem;
+  padding: 1px;
+  border-radius: 1.2rem;
+  background: linear-gradient(120deg, rgba(77,141,255,.45), rgba(255,255,255,.07), rgba(230,57,70,.3));
+  box-shadow: 0 25px 80px rgba(0,0,0,.3);
+}
+
+.mm-network-card__inner {
+  border-radius: calc(1.2rem - 1px);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.015)),
+    #0d121c;
+  padding: 1.25rem;
+}
+
+.mm-network-card img {
+  display: block;
+  width: 100%;
+  max-height: 390px;
+  object-fit: cover;
+  border-radius: .85rem;
+  opacity: .92;
+}
+
+.mm-section {
+  position: relative;
+  z-index: 1;
+  padding: 5.5rem max(1.25rem, 5vw);
+}
+
+.mm-section__inner {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.mm-section__label {
+  color: var(--mm-blue-2);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.mm-section h2 {
+  margin: .6rem 0 1rem;
+  color: var(--mm-text);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  letter-spacing: -.035em;
+}
+
+.mm-section__intro {
+  max-width: 650px;
+  color: var(--mm-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.mm-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.mm-feature {
+  padding: 1.5rem;
+  border: 1px solid var(--mm-border);
+  border-radius: 1rem;
+  background: var(--mm-panel);
+  backdrop-filter: blur(12px);
+  transition: transform .22s ease, border-color .22s ease, background .22s ease;
+}
+
+.mm-feature:hover {
+  transform: translateY(-4px);
+  border-color: rgba(122,176,255,.28);
+  background: rgba(25,31,45,.9);
+}
+
+.mm-feature__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1.1rem;
+  border-radius: .7rem;
+  background: rgba(77,141,255,.12);
+  color: var(--mm-blue-2);
+  font-size: 1.25rem;
+}
+
+.mm-feature h3 {
+  margin: 0 0 .45rem;
+  color: var(--mm-text);
+  font-size: 1.15rem;
+}
+
+.mm-feature p {
+  margin: 0;
+  color: var(--mm-muted);
+  line-height: 1.65;
+}
+
+.mm-cta {
+  margin-top: 2.5rem;
+  padding: 2.2rem;
+  border: 1px solid var(--mm-border);
+  border-radius: 1.2rem;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(77,141,255,.16), transparent 18rem),
+    var(--mm-panel);
+}
+
+.mm-cta p {
+  max-width: 700px;
+  color: var(--mm-muted);
+  line-height: 1.65;
+}
+
+.mm-cta .mm-actions {
+  margin-top: 1.25rem;
+}
+
+.md-footer {
+  border-top: 1px solid var(--mm-border);
+  background: #070a10 !important;
+}
+
+@media (max-width: 760px) {
+  .mm-hero-new {
+    min-height: auto;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  .mm-hero-new h1 {
+    font-size: clamp(3rem, 16vw, 4.5rem);
+  }
+
+  .mm-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mm-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }

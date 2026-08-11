@@ -1,84 +1,103 @@
 {% extends "main.html" %}
 
 {% block styles %}
-{{ super() }}
-  <style>
-    .background-color {
-      background: linear-gradient(
-        to bottom,
-        var(--md-primary-fg-color),
-        rgb(63, 148, 217) 99%,
-        var(--md-default-bg-color) 99%
-      );
-    }
-    .mdx-container {
-      padding-top: px2rem(20px);
-    }
-    .md-main__inner {
-      max-width: 60%;
-    }
-    @media only screen {
-      .md-main__inner {
-        max-width: 100%;
-      }
-    }
-  </style>
-  <style>
-    .md-header__title--active .md-header__topic {
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-    .md-header__title--active .md-header__topic + .md-header__topic {
-      opacity: 0;
-    }
-  </style>
+  {{ super() }}
 {% endblock %}
 
 {% block content %}
-  <section style="
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 5% 0% 5% 0%;
-  ">
-    <div style="max-width: 28em">
-      <section class="mdx-container">
-        <div class="md-grid md-typeset">
-          <div class="mdx-gallery">
-            <div style="margin-bottom: 10%" class="mdx-hero__content">
-              <h1>Welcome to Missouri Mesh!</h1>
-              <p>{{ config.site_description }}</p>
-              <img src="./assets/images/logo.png">
-              <a href="/about/" title="About" class="md-button md-button--primary">
-                Learn more
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <div>
-      <div>
-        <h1 style="margin-bottom: 10px">Join our Discord server</h1>
-        <p style="margin-bottom: 20px; max-width: 20em">
-          Want to participate? Have ideas? Need help? Join our server!
-        </p>
+<div class="mm-home">
+
+  <section class="mm-hero-new">
+    <div class="mm-hero-new__inner">
+      <div class="mm-eyebrow">Missouri's community mesh network</div>
+
+      <h1>
+        <span class="mm-gradient-text">Connect without</span><br>
+        the internet.
+      </h1>
+
+      <p class="mm-hero-new__lead">
+        Missouri Mesh is a community of LoRa enthusiasts building an
+        off-grid, decentralized, and resilient communications network
+        across Missouri.
+      </p>
+
+      <div class="mm-actions">
+        <a class="mm-action mm-action--primary" href="/about/">Get started →</a>
+        <a class="mm-action" href="/resources/">Explore the network</a>
+        <a class="mm-action" href="https://missourimesh.org/discord">Join Discord</a>
       </div>
-      <iframe
-        src="https://discord.com/widget?id=1536600107615649823"
-        width="450"
-        height="600"
-        allowtransparency="true"
-        frameborder="0"
-        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-        style="
-          margin-bottom: 1.5rem;
-          border-radius: 10px;
-          box-shadow: 0 7px 12px 5px rgb(0 0 0 / 0.2);
-        "
-      ></iframe>
+
+      <div class="mm-network-card">
+        <div class="mm-network-card__inner">
+          <img src="./assets/images/node.jpg" alt="Missouri Mesh radio node">
+        </div>
+      </div>
     </div>
   </section>
+
+  <section class="mm-section">
+    <div class="mm-section__inner">
+      <div class="mm-section__label">Why Missouri Mesh</div>
+      <h2>A network built by the community.</h2>
+      <p class="mm-section__intro">
+        No cell tower required. No single provider controls the network.
+        Missouri Mesh brings people together through open radio technology,
+        local nodes, and a community that helps each other build.
+      </p>
+
+      <div class="mm-feature-grid">
+        <article class="mm-feature">
+          <div class="mm-feature__icon">◈</div>
+          <h3>Off-grid communication</h3>
+          <p>
+            Send messages over LoRa radio without depending on traditional
+            internet or cellular infrastructure.
+          </p>
+        </article>
+
+        <article class="mm-feature">
+          <div class="mm-feature__icon">⌁</div>
+          <h3>MeshCore &amp; Meshtastic</h3>
+          <p>
+            Explore open projects that make decentralized text communication
+            possible on affordable radio hardware.
+          </p>
+        </article>
+
+        <article class="mm-feature">
+          <div class="mm-feature__icon">⌖</div>
+          <h3>Local nodes</h3>
+          <p>
+            Connect with other nodes around Missouri and help expand the
+            network where you live.
+          </p>
+        </article>
+
+        <article class="mm-feature">
+          <div class="mm-feature__icon">⌘</div>
+          <h3>Open community</h3>
+          <p>
+            Share ideas, troubleshoot hardware, discover projects, and help
+            other people get their first node online.
+          </p>
+        </article>
+      </div>
+
+      <div class="mm-cta">
+        <div class="mm-section__label">Ready to build?</div>
+        <h2>Put your first node on the mesh.</h2>
+        <p>
+          Join the community, choose supported hardware, flash your preferred
+          firmware, and start exploring Missouri Mesh.
+        </p>
+        <div class="mm-actions">
+          <a class="mm-action mm-action--primary" href="/about/">Getting started →</a>
+          <a class="mm-action" href="/neighbors/">See neighboring meshes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
 {% endblock %}

@@ -6,7 +6,9 @@ tags:
   - Info
 ---
 
-# Check Out Our Awesome Neighbors
+# Neighboring Mesh Communities
+
+Other independent LoRa mesh groups around the region — worth a look if you're near a state line or just curious how they're set up.
 
 <div class="grid cards small" markdown>
 
